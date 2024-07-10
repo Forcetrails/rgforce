@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>RG Force Flow Record Picker</masterLabel>
+    <description>Record Picker for Screen Flow with additional display and search fields</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="label" label="1. Label" type="String" default="Select Accounts" />
+
+            <property name="sobjectApiName" label="Object Api Name" type="String" role="inputOnly"
+                default="Account" required="true" />
+
+            <property name="recordId" label="2. Record Id" type="String" />
+
+            <!-- Search fields -->
+            <property name="primarySearchField" label="Primary Search Field"
+                description="Primary Field used to search records" type="String" default="Name"
+                required="true" />
+            <property name="additionalSearchField" label="3. Additional Search Field" type="String" />
+
+            <!-- Display Fields -->
+            <property name="primaryDisplayField" label="4. Primary Display Field"
+                description="Primary Display Field" type="String" default="Name" />
+            <property name="additionalDisplayField" label="5. Additional Disaply Field"
+                type="String"
+            />
+
+            <!-- Additional Fields -->
+            <property name="required" label="Required" type="Boolean" default="true" />
+            <property name="variant" label="Variant" type="String"
+                default="default" />
+            <property name="filter"
+                label="Filter criteria in JSON format (Check lightning-record-picker docs)"
+                type="String"
+                default="" />
+            <property name="disabled" label="Disabled" type="Boolean"
+                default="false" />
+            <property name="placeholder" label="Placeholder" type="String"
+                default="" />
+            <property name="fieldLevelHelp" label="Field Level Help" type="String"
+                default="" />
+            <property name="messageWhenBadInput" label="Message when bad input" type="String"
+                default="" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
